@@ -1,0 +1,388 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/SignUp/shared/FormStyles.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.FormStyles_container__vl71z{ 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+    border-radius: .75rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.FormStyles_step__uotgN{
+    font-size: .75rem;
+    opacity: 50%;
+}
+
+.FormStyles_step-header__w6OTh{
+    font-size: 1.5rem;
+}
+
+
+.FormStyles_form-input__SrHp9{
+    border: solid #eaeaea 1px;
+    border-radius: 0.5rem;
+    padding: .5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    outline: none;
+
+}
+
+
+.FormStyles_button-container__ZPLBd{
+    display: flex;
+    justify-content: space-between;
+}
+
+.FormStyles_error-message__mtiMJ{
+    color: red;
+    font-size: 0.75rem;
+    padding-left: 1rem;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/global/sharedUi.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+.sharedUi_column__Fcj6A{
+    display: flex;
+    flex-direction: column;
+}
+
+.sharedUi_nav-buttons__5xyea {
+    border: 1px solid #eaeaea;
+    padding: 0.25rem 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/SignUp/step1/SignUpStep1.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.SignUpStep1_next-btn__oJCrJ {
+    align-self: end;
+}
+
+.SignUpStep1_link__4aHW2{
+     text-decoration: none;
+     color: black;
+}
+
+.SignUpStep1_login__YNCSG {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.SignUpStep1_login_link__kjoGb {
+    color: black;
+    opacity: 50%;
+
+    padding-left: .5rem;
+    text-decoration: none;
+
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/SignUp/step2/step2Styles.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.step2Styles_state-container__mFLMO{ 
+    position: relative;
+}
+
+.step2Styles_subject-container__BQ_p_{
+    position: relative;
+}
+
+.step2Styles_state__list-container__3ABD7, .step2Styles_subject__list-container__DHfIc, .step2Styles_grade__list-container__d5A2_{
+    position: absolute;
+    padding: .5rem;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    background: white;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 10000;
+}
+
+
+.step2Styles_grade-container__ztqrh{
+    position: relative;
+}
+
+/* Container for any selection list */
+.step2Styles_selection-list-container__k7H7n {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: white;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+/* The list itself */
+.step2Styles_selection-list__xG1NF {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Individual list items */
+.step2Styles_selection-item__fLXXo {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+    color: #333;
+}
+
+.step2Styles_selection-item__fLXXo:last-child {
+    border-bottom: none;
+}
+
+.step2Styles_selection-item__fLXXo:hover {
+    background-color: #f8f9fa;
+}
+
+.step2Styles_selection-item__fLXXo.step2Styles_selected__m5UmX {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    font-weight: 500;
+}
+
+/* Container for selection bubbles */
+.step2Styles_selection-bubbles__m3dpQ {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 40px;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+}
+
+/* Individual bubble */
+.step2Styles_selection-bubble___WYHA {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #bbdefb;
+    animation: step2Styles_bubbleIn__OrIJg 0.2s ease-out;
+}
+
+/* Remove button */
+.step2Styles_remove-btn__KWzmp {
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-color: rgba(25, 118, 210, 0.1);
+    color: #1976d2;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/SignUp/step3/step3Styles.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/* SignUpStep3.module.css */
+
+.step3Styles_goals-container__1j0L9 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  
+  .step3Styles_goal-option__IJ63y {
+    width: 100%;
+  }
+  
+  .step3Styles_checkbox-label__tfQDf {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 0;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  
+  .step3Styles_checkbox-label__tfQDf:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .step3Styles_hidden-checkbox__aro_y {
+    display: none;
+  }
+  
+  .step3Styles_custom-checkbox__O9H28 {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  .step3Styles_checkbox-label__tfQDf:hover .step3Styles_custom-checkbox__O9H28 {
+    border-color: #007bff;
+  }
+  
+  .step3Styles_checkbox-label__tfQDf input:checked + .step3Styles_custom-checkbox__O9H28 {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .step3Styles_checkmark__YOOb_ {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .step3Styles_goal-text__ZJpRN {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  .step3Styles_button-container__9nRuI {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  
+  .step3Styles_back-button__V_TVd,
+  .step3Styles_next-button__giRup {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .step3Styles_back-button__V_TVd {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+  }
+  
+  .step3Styles_back-button__V_TVd:hover {
+    background-color: #e9ecef;
+  }
+  
+  .step3Styles_next-button__giRup {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .step3Styles_next-button__giRup:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .step3Styles_next-button__giRup:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .step3Styles_button-container__9nRuI {
+      flex-direction: column;
+    }
+    
+    .step3Styles_back-button__V_TVd,
+    .step3Styles_next-button__giRup {
+      width: 100%;
+    }
+  }
+  
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/SignUp/shared/OnboardingLayout.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+
+.OnboardingLayout_container__x2mBs {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #f9fafb;
+  }
+  
+  .OnboardingLayout_formWrapper__aijzs {
+    width: 100%;
+    max-width: 28rem; /* 448px */
+
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .OnboardingLayout_container__x2mBs {
+      padding: 0.5rem;
+    }
+    
+    .OnboardingLayout_formWrapper__aijzs {
+      padding: 1.5rem;
+      max-width: 100%;
+      border-radius: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .OnboardingLayout_container__x2mBs {
+      padding: 0;
+      align-items: flex-start;
+      padding-top: 2rem;
+    }
+    
+    .OnboardingLayout_formWrapper__aijzs {
+      border-radius: 0;
+      box-shadow: none;
+      padding: 1rem;
+    }
+  }
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/SignUp/dashboard/dashboard.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.dashboard_dashboard-container__WTiOP {
+    align-items: center;
+    gap: 2rem;
+}
+
+.dashboard_nav-button__Pyshh{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+    padding: 0.75rem;
+    background-color: #D3D3D3;
+    border-radius: 0.5rem;
+    border: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

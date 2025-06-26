@@ -1,0 +1,22 @@
+.next-btn {
+    align-self: end;
+}
+
+.link{
+     text-decoration: none;
+     color: black;
+}
+
+.login {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.login_link {
+    color: black;
+    opacity: 50%;
+
+    padding-left: .5rem;
+    text-decoration: none;
+
+}
