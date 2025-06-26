@@ -1,8 +1,12 @@
 {
   "dependencies": {
+    "@next/font": "^14.2.15",
+    "modern-css-reset": "^1.4.0",
     "next": "^15.3.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "us-state-codes": "^1.1.2",
+    "usa-states": "^0.0.6"
   },
   "scripts": {
     "dev": "next dev",
