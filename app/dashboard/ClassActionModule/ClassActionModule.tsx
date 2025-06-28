@@ -34,11 +34,11 @@ export default function ClassActionModule({
   const handleAddClick = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent default behavior
     
-    const input = e.currentTarget.form?.querySelector('input[name="name"]') as HTMLInputElement;
-    const className = input?.value?.trim();
+    const button = e.currentTarget as HTMLButtonElement;
+    const input = button.form?.querySelector<HTMLInputElement>('input[name="name"]');
     
-    if (className) {
-      addClass(className);
+    if (input && input.value.trim()) {
+      addClass(input.value.trim());
     }
   };
 
