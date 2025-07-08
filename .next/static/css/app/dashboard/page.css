@@ -161,6 +161,162 @@
     font-size: 0.75rem;
     padding-left: 1rem;
 }
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/EmptyDashboard/EmptyDashboard.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/* EmptyDashboard.module.css */
+
+.EmptyDashboard_container__oMrVB {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+  }
+  
+  .EmptyDashboard_content__MTgiz {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .EmptyDashboard_imageContainer__rCNO5 {
+    margin-bottom: var(--spacing-xxl);
+  }
+  
+  .EmptyDashboard_imagePlaceholder__BEii0 {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gray-300);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .EmptyDashboard_placeholderIcon__hVaiz {
+    font-size: 64px;
+    opacity: 0.7;
+  }
+  
+  .EmptyDashboard_textContent__NuRws {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl); /* Add consistent spacing between title, subtitle, and button */
+    align-items: center;
+  }
+  
+  .EmptyDashboard_title__7blgZ {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0 0 var(--spacing-md) 0;
+    line-height: 1.2;
+  }
+  
+  .EmptyDashboard_subtitle__RCfeT {
+    font-size: 18px;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin: 0 0 var(--spacing-xxl) 0;
+  }
+  
+  .EmptyDashboard_addButton__ykz60 {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-xxl);
+    background-color: var(--gray-900);
+    color: white;
+    border: none;
+    border-radius: var(--spacing-md);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .EmptyDashboard_addButton__ykz60:hover {
+    background-color: var(--gray-800);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .EmptyDashboard_addButton__ykz60:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .EmptyDashboard_buttonIcon__Xa3AS {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .EmptyDashboard_imagePlaceholder__BEii0 {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .EmptyDashboard_placeholderIcon__hVaiz {
+      font-size: 48px;
+    }
+    
+    .EmptyDashboard_title__7blgZ {
+      font-size: 28px;
+    }
+    
+    .EmptyDashboard_subtitle__RCfeT {
+      font-size: 16px;
+    }
+  }
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/global/sharedUi.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+.sharedUi_column__Fcj6A{
+    display: flex;
+    flex-direction: column;
+}
+
+.sharedUi_nav-buttons__5xyea {
+    border: 1px solid #eaeaea;
+    padding: 0.25rem 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+.sharedUi_primary-button___HLQj {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--gray-800); /* Monochrome dark gray */
+    color: var(--gray-100); /* Pure white for maximum contrast */
+    border: none; /* No border */
+    border-radius: 1.5rem;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  }
+  
+  .sharedUi_primary-button___HLQj:hover {
+    background-color: var(--gray-700);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .sharedUi_primary-button___HLQj:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/ClassCard/ClassCard.module.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************/
