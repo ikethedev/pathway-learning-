@@ -1,0 +1,55 @@
+
+.dashboardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background-color: var(--gray-200);
+}
+
+/* Hamburger Menu */
+.hamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: var(--hamburger-width);
+    height: var(--hamburger-height);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+
+.hamburgerLine {
+    display: block;
+    width: 100%;
+    height: var(--line-height);
+    background-color: var(--gray-800);
+    border-radius: var(--spacing-xs);
+    transition: var(--transition-fast);
+}
+
+/* Dashboard Home Title */
+.dashboardTitle {
+    font-size: 1.8em;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* Add Class Button */
+.addButton {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--gray-800);
+    color: var(--gray-100);
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: var(--transition-fast);
+}
+
+.addButton:hover {
+    background-color: var(--gray-900);
+}
