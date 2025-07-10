@@ -1,6 +1,4 @@
 {
-  "/api/generate/assessment/route": "app/api/generate/assessment/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/class/[classId]/page": "app/class/[classId]/page.js"
+  "/class/[classId]/page": "app/class/[classId]/page.js",
+  "/page": "app/page.js"
 }
