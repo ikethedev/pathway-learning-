@@ -234,26 +234,19 @@ export default function FeedUpdateModal({
           </div>
         )}
 
-        <div className={styles.formGroup}>
+       {postType === "announcement" && <div className={styles.formGroup}>
           <label className={styles.label}>
-            {postType === "announcement"
-              ? "Announcement"
-              : "Instructions for AI"}{" "}
-            *
+              Announcement
           </label>
           <textarea
             className={styles.textarea}
-            placeholder={
-              postType === "announcement"
-                ? "Write your announcement..."
-                : "Describe what you want to assess, any specific focus areas, or special instructions for the AI..."
-            }
+            placeholder="Write your announcement..."
             rows={4}
             id="new-post"
             required
           />
         </div>
-
+}
         <div className={styles.modalFooter}>
           <button
             className={styles.cancelButton}
