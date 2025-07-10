@@ -11,6 +11,7 @@ type ClassItem = {
     id: string;
     name: string;
     studentCount?: number;
+    classCode: string;
     createdAt?: Date;
 }
 
@@ -67,6 +68,10 @@ export default function Dashboard() {
     setCurrentClassName(e.target.value);
   };
 
+  const generateClassCode = () => {
+    return Math.random().toString(36).substring(2, 8).toUpperCase();
+  }
+
   const addClass = (className: string) => {
     if (!className.trim()) return;
     
@@ -74,6 +79,7 @@ export default function Dashboard() {
       id: uuidv4(),
       name: className.trim(),
       studentCount: 0,
+      classCode: generateClassCode(),
       createdAt: new Date()
     };
     
