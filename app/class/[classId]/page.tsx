@@ -55,8 +55,7 @@ export default function ClassPage() {
   const handleBackToClasses = () => {
     console.log("Navigating back to all classes...");
     router.push("/dashboard")
-    // Navigate back to classes list - replace with actual navigation logic
-    // For example: router.push('/classes') or window.history.back()
+   
   };
 
   const handleFabAction = (actionType) => {
