@@ -1,44 +1,69 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import styles from "./ClassPage.module.css";
+import { Content } from "next/font/google";
+import Feed from "./tabs/feed/feed"
+
 
 export default function ClassPage() {
   const [activeTab, setActiveTab] = useState("feed");
   const [fabMenuOpen, setFabMenuOpen] = useState(false);
   const fabRef = useRef(null);
-  const router = useRouter()
 
   const tabs = [
-    { id: "feed", label: "Feed", icon: "📰" },
-    { id: "assignments", label: "Assignments", icon: "📝" },
-    { id: "people", label: "People", icon: "👥" },
-    { id: "gradebook", label: "Gradebook", icon: "📊" }
+    { id: "feed", label: "Feed" },
+    { id: "assignments", label: "Assignments" },
+    { id: "people", label: "People" },
+    { id: "gradebook", label: "Gradebook" }
   ];
 
   const fabActions = [
     {
       id: "assignment",
-      icon: "📝",
       label: "Create Assignment",
       description: "Add homework or classwork",
       action: () => handleFabAction("assignment")
     },
     {
       id: "student",
-      icon: "👤",
       label: "Add Student",
       description: "Invite or enroll new student",
       action: () => handleFabAction("student")
     },
     {
       id: "announcement",
-      icon: "📢",
       label: "Post Announcement",
       description: "Share news with class",
       action: () => handleFabAction("announcement")
     }
   ];
+
+
+
+useEffect(() => {
+  const fetchStandards = async () => {
+    try {
+      const response = await fetch(
+        "https://www.commonstandardsproject.com/api/v1/jurisdictions/AB6E6F50DDF047E8BC3EE2CCFD33DCCC"
+      );
+      const data = await response.json();
+
+      const middleSchoolMath = data.standardSets.filter((set: any) =>
+        set.subject?.toLowerCase().includes("math") &&
+        set.educationLevels?.some((level: string) =>
+          ["06", "07", "08"].includes(level)
+        )
+      );
+
+      console.log("Middle School Math Standards:", middleSchoolMath);
+    } catch (error) {
+      console.error("Failed to fetch standards:", error);
+    }
+  };
+
+  fetchStandards();
+}, []);
+
 
   // Close FAB menu when clicking outside
   useEffect(() => {
@@ -54,7 +79,6 @@ export default function ClassPage() {
 
   const handleBackToClasses = () => {
     console.log("Navigating back to all classes...");
-    router.push("/dashboard")
     // Navigate back to classes list - replace with actual navigation logic
     // For example: router.push('/classes') or window.history.back()
   };
@@ -80,14 +104,16 @@ export default function ClassPage() {
     }
   };
 
-  const getTabDescription = (tabId) => {
-    const descriptions = {
-      feed: 'View class announcements and recent activity',
-      assignments: 'Manage assignments and homework',
-      people: 'View students and class roster',
-      gradebook: 'Track student grades and performance'
-    };
-    return descriptions[tabId];
+  const renderTabContent = (tabId) => {
+    switch(tabId){
+      case "feed":
+        return <Feed />;
+        break;
+      default:
+      return "hello world"
+
+    }
+
   };
 
   return (
@@ -117,8 +143,10 @@ export default function ClassPage() {
           <h2 className={styles.contentTitle}>
             {activeTab}
           </h2>
-          <p className={styles.contentDescription}>
-            {getTabDescription(activeTab)}
+        </div>
+        <div>
+        <p className={styles.contentDescription}>
+            {renderTabContent(activeTab)}
           </p>
         </div>
       </main>
