@@ -1,0 +1,119 @@
+/* SignUpStep3.module.css */
+
+.goals-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  
+  .goal-option {
+    width: 100%;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 0;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    user-select: none;
+  }
+  
+  .checkbox-label:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .hidden-checkbox {
+    display: none;
+  }
+  
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  .checkbox-label:hover .custom-checkbox {
+    border-color: #007bff;
+  }
+  
+  .checkbox-label input:checked + .custom-checkbox {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .checkmark {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .goal-text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  
+  .back-button,
+  .next-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .back-button {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+  }
+  
+  .back-button:hover {
+    background-color: #e9ecef;
+  }
+  
+  .next-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .next-button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .button-container {
+      flex-direction: column;
+    }
+    
+    .back-button,
+    .next-button {
+      width: 100%;
+    }
+  }
+  

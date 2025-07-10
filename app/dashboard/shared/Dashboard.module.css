@@ -1,0 +1,10 @@
+.container {
+    padding:1.25rem 1.25rem;
+}
+
+.courses__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}

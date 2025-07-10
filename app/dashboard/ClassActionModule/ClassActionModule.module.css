@@ -1,0 +1,59 @@
+/* Overlay that covers the entire screen */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 0.75rem;
+    z-index: 10000;
+    width: 100%;
+    max-width: 400px;
+    min-width: 320px;
+}
+
+.form__input-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 10000;
+}
+
+.action__btn{
+    background-color: transparent;
+    border: none;
+}
+
+.add-button {
+    border: 1px solid #eaeaea;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.add-button:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
