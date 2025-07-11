@@ -4,10 +4,12 @@ import styles from "./ClassCard.module.css";
 interface ClassCardProps {
     name: string;
     studentCount: number;
+    // this is being passed from the dashboard page
     onGoToClass?: () => void; // Add this line
   }
   
 export default function ClassCard({ name, studentCount, onGoToClass }: ClassCardProps) {
+
   return (
     <div className={styles.card} onClick={onGoToClass}>
       {/* Header section with background image */}

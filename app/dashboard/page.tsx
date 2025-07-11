@@ -6,14 +6,9 @@ import DashboardHeader from "./header/DashboardHeader";
 import EmptyDashboard from "./EmptyDashboard/EmptyDashboard";
 import ClassCard from "./ClassCard/ClassCard";
 import styles from "./shared/Dashboard.module.css"
+import { ClassItem } from "../types/ClassTypes";
 
-type ClassItem = {
-    id: string;
-    name: string;
-    studentCount?: number;
-    classCode: string;
-    createdAt?: Date;
-}
+
 
 const STORAGE_KEY = 'classroom_classes';
 
@@ -51,7 +46,6 @@ export default function Dashboard() {
 
   const goToClass = (classId: string) => {
     // Navigate to the class page
-    console.log("Navigating to:", `/class/${classId}`); // Add this to debug
     router.push(`/class/${classId}`);
   };
 
@@ -80,8 +74,14 @@ export default function Dashboard() {
       name: className.trim(),
       studentCount: 0,
       classCode: generateClassCode(),
-      createdAt: new Date()
+      createdAt: new Date(),
+      // Initialize the missing arrays
+      students: [],
+      assignments: [],
+      posts: [],
+      grades: []
     };
+    
     
     setCourses((prevState) => [...prevState, newClass]);
     setCurrentClassName(""); // Reset input

@@ -1,470 +1,313 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from 'next/navigation';
 import styles from "./ClassPage.module.css";
-import { Content } from "next/font/google";
-import Feed from "./tabs/feed/feed"
-import FeedUpdateModal from "../components/FeedUpdate/FeedUpdate";
+import { ClassItem, Post, Assignment, Student, Grade } from "../../types/ClassTypes";
 
-interface Standard {
-  code: string;
-  description: string;
-  grade: number;
-  unitTitle: string;
-}
-
-interface Post {
-  content: string;
-  topic?: string;
-  type: "announcement" | "diagnostic";
-  avatarUrl: string;
-  standard?: string;
-  isGenerating?: boolean;
-  previewFile?: string;
-  assessmentId?: string;
-}
-
-interface AssessmentConfig {
-  bloomsLevels: string[];
-  questionTypes: string[];
-  difficulty: "easy" | "medium" | "hard";
-  numQuestions: number;
-}
-
+const STORAGE_KEY = 'classroom_classes';
 
 export default function ClassPage() {
-  const [activeTab, setActiveTab] = useState("feed");
-  const [fabMenuOpen, setFabMenuOpen] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [postType, setPostType] = useState<"announcement" | "diagnostic">(
-    "announcement"
-  );
-  const [selectedStandard, setSelectedStandard] = useState<string>("");
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [standards, setStandards] = useState<Standard[]>([]);
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  // AI Configuration state
-  const [assessmentConfig, setAssessmentConfig] = useState<AssessmentConfig>({
-    bloomsLevels: ["remember", "understand", "apply"],
-    questionTypes: ["multiple_choice", "fill_blank"],
-    difficulty: "medium",
-    numQuestions: 5,
-  });
-  const fabRef = useRef(null);
-  const router = useRouter()
-
-
-  const tabs = [
-    { id: "feed", label: "Feed" },
-    { id: "assignments", label: "Assignments" },
-    { id: "people", label: "People" },
-    { id: "gradebook", label: "Gradebook" }
-  ];
-
-  const fabActions = [
-    {
-      id: "assignment",
-      label: "Create Assignment",
-      description: "Add homework or classwork",
-      action: () => handleFabAction("assignment")
-    },
-    {
-      id: "student",
-      label: "Add Student",
-      description: "Invite or enroll new student",
-      action: () => handleFabAction("student")
-    },
-    {
-      id: "announcement",
-      label: "Post Announcement",
-      description: "Share news with class",
-      action: () => handleFabAction("announcement")
-    }
-  ];
-
-
-
-useEffect(() => {
-  const fetchStandards = async () => {
-    try {
-      const response = await fetch(
-        "https://www.commonstandardsproject.com/api/v1/jurisdictions/AB6E6F50DDF047E8BC3EE2CCFD33DCCC"
-      );
-      const data = await response.json();
-
-      const middleSchoolMath = data.standardSets.filter((set: any) =>
-        set.subject?.toLowerCase().includes("math") &&
-        set.educationLevels?.some((level: string) =>
-          ["06", "07", "08"].includes(level)
-        )
-      );
-
-      console.log("Middle School Math Standards:", middleSchoolMath);
-    } catch (error) {
-      console.error("Failed to fetch standards:", error);
-    }
-  };
-
-  fetchStandards();
-}, []);
-
-
-  // Close FAB menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (fabRef.current && !fabRef.current.contains(event.target)) {
-        setFabMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleBackToClasses = () => {
-    router.push('/dashboard')
-
-  };
-
-  const generateDiagnosticAssessment = async (
-    standard: Standard,
-    topic: string,
-    content: string
-  ): Promise<any> => {
-    try {
-      // Send the assessment configuration instead of a prompt
-      const response = await fetch("/api/generate/assessment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          // Send the config data that your route expects
-          bloomsLevels: assessmentConfig.bloomsLevels,
-          questionTypes: assessmentConfig.questionTypes,
-          difficulty: assessmentConfig.difficulty,
-          numQuestions: assessmentConfig.numQuestions,
-          // Add the context data
-          standard: {
-            code: standard.code,
-            description: standard.description,
-            grade: standard.grade,
-            unitTitle: standard.unitTitle
-          },
-          topic: topic,
-          instructions: content
-        }),
-      });
+  const params = useParams();
+  const classId = params.id as string;
+  const router = useRouter();
   
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to generate assessment");
-      }
-  
-      const data = await response.json();
-      return JSON.parse(data.assessment); // Parse the JSON string returned by OpenAI
-    } catch (error) {
-      console.error("Error generating assessment:", error);
-      throw error;
-    }
-  };
-
-  const savePreviewFile = async (
-    assessment: any,
-    postId: string
-  ): Promise<string> => {
-    const fileName = `diagnostic_${assessment.assessment.standard.code.replace(
-      /\./g,
-      "_"
-    )}_${postId}.json`;
-
-    try {
-      // Save to public/previews directory
-      const response = await fetch("/api/save-preview", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fileName,
-          data: assessment,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to save preview file");
-      }
-
-      const result = await response.json();
-      return result.filePath;
-    } catch (error) {
-      console.error("Error saving preview file:", error);
-      throw error;
-    }
-  };
-
-  const handleCreateDiagnostic = async () => {
-    const content = (
-      document.getElementById("new-post") as HTMLTextAreaElement
-    )?.value.trim();
-    const topic = (
-      document.getElementById("post-topic") as HTMLInputElement
-    )?.value.trim();
-
-    if (!content || !selectedStandard) {
-      alert("Please fill in all required fields");
-      return;
-    }
-
-    const selectedStandardObj = standards.find(
-      (s) => s.code === selectedStandard
-    );
-    if (!selectedStandardObj) {
-      alert("Selected standard not found");
-      return;
-    }
-
-    const postId = `post_${Date.now()}`;
-
-    // Create post immediately with loading state
-    const newPost: Post = {
-      content,
-      type: "diagnostic",
-      topic,
-      avatarUrl: `https://api.dicebear.com/7.x/thumbs/svg?seed=${Math.floor(
-        Math.random() * 1000
-      )}`,
-      standard: selectedStandard,
-      isGenerating: true,
-      assessmentId: postId,
-    };
-
-    setPosts([newPost, ...posts]);
-    setIsGenerating(true);
-    setShowModal(false);
-
-    try {
-      // Generate assessment using AI
-      console.log("Generating assessment for standard:", selectedStandardObj);
-      const assessment = await generateDiagnosticAssessment(
-        selectedStandardObj,
-        topic,
-        content
-      );
-
-      // Log the assessment data to console
-      console.log("🎯 FULL ASSESSMENT DATA:", assessment);
-
-      // Store assessment in sessionStorage for preview (since we can't save files)
-      const assessmentKey = `assessment_${postId}`;
-      sessionStorage.setItem(
-        assessmentKey,
-        JSON.stringify(assessment, null, 2)
-      );
-
-      // Update the post to show completion with preview data
-      setPosts((prevPosts) =>
-        prevPosts.map((post) =>
-          post.assessmentId === postId
-            ? {
-                ...post,
-                isGenerating: false,
-                previewFile: assessmentKey, // Use the sessionStorage key as the "file"
-              }
-            : post
-        )
-      );
-
-      console.log("✅ Assessment generated successfully!");
-    } catch (error) {
-      console.error("Failed to generate assessment:", error);
-      // Update post to show error state
-      setPosts((prevPosts) =>
-        prevPosts.map((post) =>
-          post.assessmentId === postId ? { ...post, isGenerating: false } : post
-        )
-      );
-      alert("Failed to generate assessment. Please try again.");
-    } finally {
-      setIsGenerating(false);
-      // Clear form inputs
-      const contentInput = document.getElementById(
-        "new-post"
-      ) as HTMLTextAreaElement;
-      const topicInput = document.getElementById(
-        "post-topic"
-      ) as HTMLInputElement;
-      if (contentInput) contentInput.value = "";
-      if (topicInput) topicInput.value = "";
-      setSelectedStandard("");
-      setPostType("announcement");
-    }
-  };
-
-  const handlePost = () => {
-    if (postType === "diagnostic") {
-      handleCreateDiagnostic();
-      return;
-    }
-
-    const content = (
-      document.getElementById("new-post") as HTMLTextAreaElement
-    )?.value.trim();
-    if (!content) return;
-
-    const newPost: Post = {
-      content,
-      type: postType,
-      avatarUrl: `https://api.dicebear.com/7.x/thumbs/svg?seed=${Math.floor(
-        Math.random() * 1000
-      )}`,
-    };
-
-    setPosts([newPost, ...posts]);
-    setShowModal(false);
-
-    // Clear form inputs
-    const contentInput = document.getElementById(
-      "new-post"
-    ) as HTMLTextAreaElement;
-    if (contentInput) contentInput.value = "";
-  };
-
-
-  const openAssignmentModal = () => {
-    console.log("running")
     
-    setShowModal(true)
+  const storedClasses = localStorage.getItem(STORAGE_KEY);
+
+
+  let currentClass;
+  if(storedClasses) {
+    currentClass = JSON.parse(storedClasses);
+   console.log(currentClass)
   }
 
-  const handleFabAction = (actionType) => {
-    setFabMenuOpen(false);
-    // Handle the action - you can replace these with actual functionality
-    switch (actionType) {
-      case "assignment":
-        setPostType("diagnostic"); 
-        setShowModal(true);
-        break;
-      case "student":
-        console.log("Adding new student...");
-        // Navigate to student addition or open modal
-        break;
-      case "announcement":
-        console.log("Creating announcement...");
-        setPostType("announcement"); 
-        setShowModal(true);
-        break;
-      default:
-        break;
+  const { name } = currentClass[0]
+  console.log(name)
+  
+  
+  // State for all class data
+  const [classData, setClassData] = useState<ClassItem | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  // Individual state for different data types (optional, for better UX)
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [assignments, setAssignments] = useState<Assignment[]>([]);
+  const [students, setStudents] = useState<Student[]>([]);
+  const [grades, setGrades] = useState<Grade[]>([]);
+
+  // Load comprehensive class data
+  useEffect(() => {
+    const loadCompleteClassData = async () => {
+      try {
+        setLoading(true);
+        
+        // Load main class data
+        const classInfo = await loadClassInfo(classId);
+        if (!classInfo) {
+          setError('Class not found');
+          return;
+        }
+        
+        setClassData(classInfo);
+        
+        // Load all related data
+        await Promise.all([
+          loadClassPosts(classId),
+          loadClassAssignments(classId),
+          loadClassStudents(classId),
+          loadClassGrades(classId)
+        ]);
+
+        console.log('Class Info:', classInfo);
+        console.log('Class ID:', classId);
+        
+        
+      } catch (error) {
+        console.error('Error loading class data:', error);
+        setError('Failed to load class data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (classId) {
+      loadCompleteClassData();
+    }
+  }, [classId]);
+
+  // Function to load basic class info
+  const loadClassInfo = async (id: string): Promise<ClassItem | null> => {
+    try {
+      const storedClasses = localStorage.getItem(STORAGE_KEY);
+      if (!storedClasses) return null;
+
+      const parsedClasses: ClassItem[] = JSON.parse(storedClasses);
+      return parsedClasses.find(course => course.id === id) || null;
+    } catch (error) {
+      console.error('Error loading class info:', error);
+      return null;
     }
   };
 
-  const renderTabContent = (tabId) => {
-    switch(tabId){
-      case "feed":
-        return <Feed />;
-        break;
-      default:
-      return "hello world"
-
+  // Function to load class posts
+  const loadClassPosts = async (classId: string) => {
+    try {
+      const postsKey = `class_posts_${classId}`;
+      const storedPosts = localStorage.getItem(postsKey);
+      if (storedPosts) {
+        const parsedPosts: Post[] = JSON.parse(storedPosts);
+        setPosts(parsedPosts);
+        
+        // Update main class data
+        setClassData(prev => prev ? { ...prev, posts: parsedPosts } : null);
+      }
+    } catch (error) {
+      console.error('Error loading posts:', error);
     }
-
   };
+
+  // Function to load class assignments
+  const loadClassAssignments = async (classId: string) => {
+    try {
+      const assignmentsKey = `class_assignments_${classId}`;
+      const storedAssignments = localStorage.getItem(assignmentsKey);
+      if (storedAssignments) {
+        const parsedAssignments: Assignment[] = JSON.parse(storedAssignments);
+        setAssignments(parsedAssignments);
+        
+        // Update main class data
+        setClassData(prev => prev ? { ...prev, assignments: parsedAssignments } : null);
+      }
+    } catch (error) {
+      console.error('Error loading assignments:', error);
+    }
+  };
+
+  // Function to load class students
+  const loadClassStudents = async (classId: string) => {
+    try {
+      const studentsKey = `class_students_${classId}`;
+      const storedStudents = localStorage.getItem(studentsKey);
+      if (storedStudents) {
+        const parsedStudents: Student[] = JSON.parse(storedStudents);
+        setStudents(parsedStudents);
+        
+        // Update main class data
+        setClassData(prev => prev ? { 
+          ...prev, 
+          students: parsedStudents,
+          studentCount: parsedStudents.length 
+        } : null);
+      }
+    } catch (error) {
+      console.error('Error loading students:', error);
+    }
+  };
+
+  // Function to load class grades
+  const loadClassGrades = async (classId: string) => {
+    try {
+      const gradesKey = `class_grades_${classId}`;
+      const storedGrades = localStorage.getItem(gradesKey);
+      if (storedGrades) {
+        const parsedGrades: Grade[] = JSON.parse(storedGrades);
+        setGrades(parsedGrades);
+        
+        // Update main class data
+        setClassData(prev => prev ? { ...prev, grades: parsedGrades } : null);
+      }
+    } catch (error) {
+      console.error('Error loading grades:', error);
+    }
+  };
+
+  // Function to save data to localStorage
+  const saveClassData = (dataType: string, data: any) => {
+    try {
+      const storageKey = `class_${dataType}_${classId}`;
+      localStorage.setItem(storageKey, JSON.stringify(data));
+    } catch (error) {
+      console.error(`Error saving ${dataType}:`, error);
+    }
+  };
+
+  // Function to add a new post
+  const addPost = (postData: Omit<Post, 'id' | 'createdAt'>) => {
+    const newPost: Post = {
+      ...postData,
+      id: `post_${Date.now()}`,
+      createdAt: new Date()
+    };
+
+    const updatedPosts = [newPost, ...posts];
+    setPosts(updatedPosts);
+    saveClassData('posts', updatedPosts);
+    
+    // Update main class data
+    setClassData(prev => prev ? { ...prev, posts: updatedPosts } : null);
+  };
+
+  // Function to add a new assignment
+  const addAssignment = (assignmentData: Omit<Assignment, 'id' | 'createdAt'>) => {
+    const newAssignment: Assignment = {
+      ...assignmentData,
+      id: `assignment_${Date.now()}`,
+      createdAt: new Date()
+    };
+
+    const updatedAssignments = [...assignments, newAssignment];
+    setAssignments(updatedAssignments);
+    saveClassData('assignments', updatedAssignments);
+    
+    // Update main class data
+    setClassData(prev => prev ? { ...prev, assignments: updatedAssignments } : null);
+  };
+
+  // Function to add a grade
+  const addGrade = (gradeData: Omit<Grade, 'id' | 'gradedAt'>) => {
+    const newGrade: Grade = {
+      ...gradeData,
+      id: `grade_${Date.now()}`,
+      gradedAt: new Date()
+    };
+
+    const updatedGrades = [...grades, newGrade];
+    setGrades(updatedGrades);
+    saveClassData('grades', updatedGrades);
+    
+    // Update main class data
+    setClassData(prev => prev ? { ...prev, grades: updatedGrades } : null);
+  };
+
+  // Function to get student grades for a specific assignment
+  const getAssignmentGrades = (assignmentId: string) => {
+    return grades.filter(grade => grade.assignmentId === assignmentId);
+  };
+
+  // Function to get all grades for a specific student
+  const getStudentGrades = (studentId: string) => {
+    return grades.filter(grade => grade.studentId === studentId);
+  };
+
+  // Function to calculate class average for an assignment
+  const getAssignmentAverage = (assignmentId: string) => {
+    const assignmentGrades = getAssignmentGrades(assignmentId);
+    if (assignmentGrades.length === 0) return 0;
+    
+    const total = assignmentGrades.reduce((sum, grade) => sum + (grade.score / grade.maxScore) * 100, 0);
+    return total / assignmentGrades.length;
+  };
+
+
+
 
   return (
     <div className={styles.container}>
-      {/* Header with back button */}
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.classInfo}>
             <button 
               className={styles.backButton}
-              onClick={handleBackToClasses}
+              onClick={() => router.push('/dashboard')}
               aria-label="Back to all classes"
             >
               <span className={styles.backArrow}>‹</span>
               <span>All Classes</span>
             </button>
             <h1 className={styles.classTitle}>
-              Mathematics 101
+              {name}
             </h1>
+            <div className={styles.classMeta}>
+              <span>Code:</span>
+              <span> Students</span>
+              <span>{assignments.length} Assignments</span>
+              <span>{posts.length} Posts</span>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Main content */}
       <main className={styles.main}>
         <div className={styles.content}>
-          <h2 className={styles.contentTitle}>
-            {activeTab}
-          </h2>
-        </div>
-        <div>
-        <p className={styles.contentDescription}>
-            {renderTabContent(activeTab)}
-          </p>
-        </div>
-      </main>
+          {/* Class Statistics */}
+          <div className={styles.classStats}>
+            <div className={styles.statCard}>
+              <h3>Students</h3>
+              <p>{students.length}</p>
+            </div>
+            <div className={styles.statCard}>
+              <h3>Assignments</h3>
+              <p>{assignments.length}</p>
+            </div>
+            <div className={styles.statCard}>
+              <h3>Posts</h3>
+              <p>{posts.length}</p>
+            </div>
+            <div className={styles.statCard}>
+              <h3>Grades</h3>
+              <p>{grades.length}</p>
+            </div>
+          </div>
 
-      {/* Bottom Navigation */}
-      <nav className={styles.bottomNav}>
-        <div className={styles.bottomNavContent}>
-          <div className={styles.tabContainer}>
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`${styles.tab} ${
-                  activeTab === tab.id ? styles.tabActive : ""
-                }`}
-              >
-                <span className={styles.tabLabel}>{tab.label}</span>
-              </button>
-            ))}
+          {/* Debug Info - You can remove this in production */}
+          <div className={styles.debugInfo}>
+            <h3>Available Data:</h3>
+            <ul>
+              <li>Class Name:</li>
+              <li>Class Code: </li>
+              <li>Posts: {posts.length}</li>
+              <li>Assignments: {assignments.length}</li>
+              <li>Students: {students.length}</li>
+              <li>Grades: {grades.length}</li>
+            </ul>
+          </div>
+
+          {/* You can now use all this data in your tabs */}
+          <div className={styles.tabContent}>
+            {/* Your existing tab content, but now with access to all data */}
           </div>
         </div>
-      </nav>
-
-      {/* Floating Action Button - positioned above bottom nav */}
-      <div className={styles.fab} ref={fabRef}>
-        <button
-          className={styles.fabButton}
-          onClick={() => setFabMenuOpen(!fabMenuOpen)}
-          aria-label="Teacher actions"
-        >
-          {fabMenuOpen ? "×" : "+"}
-        </button>
-        
-        <div className={`${styles.fabMenu} ${fabMenuOpen ? styles.fabMenuOpen : ""}`}>
-          {fabActions.map((action) => (
-            <button
-              key={action.id}
-              className={styles.fabMenuItem}
-              onClick={action.action}
-            >
-              <div className={styles.fabMenuText}>
-                <div>{action.label}</div>
-                <div className={styles.fabMenuDescription}>{action.description}</div>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {showModal &&  
-        <FeedUpdateModal  
-        setShowModal={setShowModal}
-        postType={postType}
-        setPostType={setPostType}
-        selectedStandard={selectedStandard}
-        setSelectedStandard={setSelectedStandard}
-        standards={standards}
-        assessmentConfig={assessmentConfig}
-        setAssessmentConfig={setAssessmentConfig}
-        handlePost={handlePost}
-        isGenerating={isGenerating}/>
-        }
+      </main>
     </div>
   );
 }
