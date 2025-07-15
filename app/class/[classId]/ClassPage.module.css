@@ -76,7 +76,7 @@
 
 /* Bottom Navigation - Google Classroom Style */
 .bottomNav {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;

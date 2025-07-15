@@ -1,0 +1,265 @@
+/* People.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    min-height: 60vh;
+  }
+  
+  /* Teacher Section */
+  .teacherSection {
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-fast);
+  }
+  
+  .teacherSection:hover {
+    border-color: var(--gray-400);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .teacherHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .teacherLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .teacherName {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+  }
+  
+  .teacherAvatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--gray-300);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--gray-600);
+  }
+  
+  .teacherStatus {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--gray-200);
+    border-radius: var(--button-radius);
+    font-size: 0.75rem;
+    color: var(--gray-700);
+    text-align: center;
+  }
+  
+  .teacherStatus.online {
+    background-color: #e8f5e8;
+    color: #2d5a2d;
+  }
+  
+  .teacherStatus.offline {
+    background-color: var(--gray-300);
+    color: var(--gray-700);
+  }
+  
+  /* Students Section */
+  .studentsSection {
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .studentsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-300);
+  }
+  
+  .studentsTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+  }
+  
+  .studentsCount {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    background-color: var(--gray-200);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--button-radius);
+  }
+  
+  .studentsList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .studentItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    background-color: var(--gray-200);
+    border-radius: var(--button-radius);
+    transition: var(--transition-fast);
+    cursor: pointer;
+  }
+  
+  .studentItem:hover {
+    background-color: var(--gray-300);
+    transform: translateY(-1px);
+  }
+  
+  .studentItem.selected {
+    background-color: var(--gray-400);
+    color: var(--gray-100);
+  }
+  
+  .studentInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .studentAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--gray-100);
+    font-weight: 500;
+  }
+  
+  .studentName {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+  }
+  
+  .studentItem.selected .studentName {
+    color: var(--gray-100);
+  }
+  
+  .studentActions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .messageIcon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+    cursor: pointer;
+  }
+  
+  .messageIcon:hover {
+    opacity: 1;
+  }
+  
+  .studentStatus {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--gray-500);
+  }
+  
+  .studentStatus.online {
+    background-color: #4caf50;
+  }
+  
+  .studentStatus.away {
+    background-color: #ff9800;
+  }
+  
+  .studentStatus.offline {
+    background-color: var(--gray-500);
+  }
+  
+  /* Empty state */
+  .emptyState {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray-600);
+  }
+  
+  .emptyState p {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .emptyState button {
+    background-color: var(--gray-300);
+    color: var(--gray-700);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .emptyState button:hover {
+    background-color: var(--gray-400);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+    
+    .container {
+      padding: var(--spacing-lg);
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+  }

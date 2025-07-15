@@ -1,0 +1,482 @@
+/* Gradebook.module.css */
+.header {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .subtitle {
+    color: var(--gray-600);
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .searchInputWrapper {
+    position: relative;
+    flex: 1;
+    min-width: 16rem;
+  }
+  
+  .searchInput {
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    width: 100%;
+  }
+  
+  .iconLeft {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    color: var(--gray-500);
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .tableWrapper {
+    background-color: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--button-radius);
+    overflow-x: auto;
+  }
+  
+  .avatar {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 9999px;
+    background-color: var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+  
+  .gradeBadge {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .tableScroll {
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tableHead {
+    background-color: var(--gray-200);
+  }
+  
+  .studentHeader {
+    position: sticky;
+    left: 0;
+    background-color: var(--gray-200);
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .assignmentHeader {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .assignmentHeaderContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .assignmentName {
+    font-weight: 600;
+  }
+  
+  .assignmentMeta {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+  
+  .totalHeader,
+  .gradeHeader {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .tableBody {
+    background-color: white;
+  }
+  
+  .row:hover {
+    background-color: var(--gray-200);
+  }
+  
+  .studentCell {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    white-space: nowrap;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .studentInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .studentText {
+    margin-left: 1rem;
+  }
+  
+  .studentName {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-900);
+  }
+  
+  .studentEmail {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+  }
+  
+  .scoreCell {
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .scoreBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .scoreBadge:hover {
+    opacity: 0.8;
+  }
+  
+  .editInputWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .editInput {
+    width: 4rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+  }
+  
+  .iconSuccess {
+    color: var(--green-600);
+  }
+  
+  .iconCancel {
+    color: var(--red-600);
+  }
+  
+  .iconSmall {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .iconTiny {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: 0.25rem;
+    opacity: 0.5;
+  }
+  
+  .totalCell {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .totalPercent {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+  
+  .finalGradeCell {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Grade colors */
+  .gradeA {
+    color: #15803d;
+    background-color: #dcfce7;
+  }
+  
+  .gradeB {
+    color: #1d4ed8;
+    background-color: #dbeafe;
+  }
+  
+  .gradeC {
+    color: #ca8a04;
+    background-color: #fef9c3;
+  }
+  
+  .gradeD {
+    color: #ea580c;
+    background-color: #ffedd5;
+  }
+  
+  .gradeF {
+    color: #dc2626;
+    background-color: #fee2e2;
+  }
+  
+  .studentDetailView {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    background-color: var(--gray-100);
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    color: var(--gray-700);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+  }
+  
+  .studentDetailHeader {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .assignmentList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .assignmentItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+  }
+  
+  .assignmentScore {
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--button-radius);
+  }
+  
+  .backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .backButton:hover {
+    background-color: var(--gray-300);
+  }
+
+  .actionButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+  }
+  
+  .addButton {
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+  }
+  
+  .addButton:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: translateY(-1px);
+  }
+  
+  .exportButton {
+    background-color: #16a34a; /* green-600 */
+    color: white;
+  }
+  
+  .exportButton:hover {
+    background-color: #15803d; /* green-700 */
+    transform: translateY(-1px);
+  }
+  
+  .iconButton {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .actionButton:active {
+    transform: scale(0.98);
+  }
+
+  .sortDropdown {
+    appearance: none;
+    background-color: white;
+    color: var(--gray-900);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 20 20' fill='none' stroke='%23666' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+  
+  .sortDropdown:hover {
+    border-color: var(--gray-500);
+  }
+  
+  .sortDropdown:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3); /* blue-600 ring */
+  }
+  
+  @media (max-width: 768px) {
+    .tableScroll {
+      overflow-x: hidden; /* prevent any scroll */
+    }
+  
+    .tableWrapper {
+      overflow-x: hidden;
+    }
+  
+    .table {
+      width: 100% !important;  /* force full width */
+      table-layout: fixed;
+    }
+  
+    .tableHead,
+    .tableBody {
+      width: 100%;
+    }
+  
+    .studentHeader,
+    .assignmentHeader,
+    .totalHeader,
+    .gradeHeader,
+    .scoreCell,
+    .totalCell,
+    .finalGradeCell {
+      display: none;
+    }
+  
+    .studentCell {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+  
+    .gradebookWrapper {
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+  
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--button-radius);
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modalHeader {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .modalActions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  

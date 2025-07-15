@@ -1,0 +1,347 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--gray-100);
+    min-height: 100vh;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--gray-300);
+    padding-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin: 0;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .searchWrapper {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+    transition: var(--transition-fast);
+    box-sizing: border-box;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    border-color: var(--gray-500);
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .select:focus {
+    outline: none;
+    border-color: var(--gray-500);
+  }
+  
+  .addButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--gray-800);
+    color: var(--gray-100);
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .addButton:hover {
+    background-color: var(--gray-700);
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+  
+  .card {
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    padding: 1.5rem;
+    transition: var(--transition-fast);
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    border-color: var(--gray-400);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cardOverdue {
+    border-color: var(--gray-600);
+  }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .cardType {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .cardActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .actionButton {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--button-radius);
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .actionButton:hover {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+  }
+  
+  .description {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .metaGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .metaItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .metaIcon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--gray-500);
+  }
+  
+  .metaText {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+  }
+  
+  .overdueText {
+    color: var(--gray-800);
+    font-weight: 600;
+  }
+  
+  .statsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-300);
+  }
+  
+  .submissionStats {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .submissionCount {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+  }
+  
+  .submissionRate {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--button-radius);
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+  }
+  
+  .submissionRateHigh {
+    background-color: var(--gray-300);
+    color: var(--gray-900);
+  }
+  
+  .submissionRateMedium {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+  }
+  
+  .submissionRateLow {
+    background-color: var(--gray-200);
+    color: var(--gray-700);
+  }
+  
+  .statusBadge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--button-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+    display: inline-block;
+    border: 1px solid;
+  }
+  
+  .statusActive {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    border-color: var(--gray-300);
+  }
+  
+  .statusUpcoming {
+    background-color: var(--gray-100);
+    color: var(--gray-600);
+    border-color: var(--gray-400);
+  }
+  
+  .statusCompleted {
+    background-color: var(--gray-300);
+    color: var(--gray-900);
+    border-color: var(--gray-400);
+  }
+  
+  .emptyState {
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray-500);
+  }
+  
+  .emptyIcon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    color: var(--gray-400);
+  }
+  
+  .emptyText {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .searchWrapper {
+      min-width: auto;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .metaGrid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    
+    .statsRow {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.5rem;
+    }
+    
+    .card {
+      padding: 1rem;
+    }
+    
+    .cardHeader {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .cardActions {
+      align-self: flex-end;
+    }
+  }

@@ -79,7 +79,8 @@
 
 /* Bottom Navigation - Google Classroom Style */
 .ClassPage_bottomNav__EB1_b {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
@@ -291,3 +292,1886 @@
     font-size: 20px;
   }
 }
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/class/[classId]/tabs/feed/feed.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+    /* Container */
+  .feed_container__sKfH5 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--gray-50);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Post Card (Create new postF prompt) */
+  .feed_postCard__J5zYh {
+    background-color: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    padding: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .feed_postCard__J5zYh:hover {
+    background-color: var(--gray-200);
+    border-color: var(--gray-500);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .feed_prompt__CeJD_ {
+    color: var(--gray-600);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    color: var(--gray-600);
+    font-size: 14px;
+  }
+  
+  .feed_toggleButton__HwPe5:hover {
+    background-color: var(--gray-200);
+    color: var(--gray-700);
+  }
+  
+  .feed_toggleButton__HwPe5.feed_active__VLzYn {
+    background-color: var(--gray-700);
+    color: white;
+  }
+  
+  /* Form Elements */
+  .feed_formGroup__nanJB {
+    margin-bottom: 20px;
+  }
+  
+  .feed_label__KME1e {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .feed_textarea__roe3y,
+  .feed_topicInput__10pjE,
+  .feed_input__Jtvgh,
+  .feed_select__KBo6T {
+    width: 100%;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: inherit;
+    background-color: white;
+    font-size: 15px;
+    color: var(--gray-800);
+    transition: border-color var(--transition-fast);
+    box-sizing: border-box;
+  }
+  
+  .feed_textarea__roe3y:focus,
+  .feed_topicInput__10pjE:focus,
+  .feed_input__Jtvgh:focus,
+  .feed_select__KBo6T:focus {
+    outline: none;
+    border-color: var(--gray-500);
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+  }
+  
+  .feed_textarea__roe3y {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .feed_numberInput__8RVhw {
+    width: auto;
+    min-width: 80px;
+  }
+  
+  /* AI Configuration Panel */
+  .feed_diagnosticConfig__gUsgu {
+    margin-bottom: 20px;
+  }
+  
+  .feed_aiConfigPanel__tAROP {
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .feed_configTitle__IWVKh {
+    margin: 0 0 16px 0;
+    color: var(--gray-800);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .feed_configSection__0qDti {
+    margin-bottom: 20px;
+  }
+  
+  .feed_configLabel__jt6GG {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .feed_checkboxGrid__wZBWJ {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 12px;
+    gap: 12px;
+  }
+  
+  .feed_checkboxLabel__CRcQd {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-600);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .feed_checkboxLabel__CRcQd:hover {
+    background-color: var(--gray-200);
+  }
+  
+  .feed_checkboxLabel__CRcQd input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gray-600);
+  }
+  
+  .feed_configRow__j_QGh {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .feed_configItem__KxqrD {
+    flex: 1 1;
+  }
+  
+  /* Modal Footer */
+  .feed_modalFooter__RrZ2z {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+  }
+  
+  .feed_cancelButton__oD_jM,
+  .feed_postButton__pNmBs {
+    padding: 12px 24px;
+    border-radius: var(--button-radius);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .feed_cancelButton__oD_jM {
+    background-color: white;
+    color: var(--gray-600);
+    border-color: var(--gray-300);
+  }
+  
+  .feed_cancelButton__oD_jM:hover {
+    background-color: var(--gray-50);
+    border-color: var(--gray-400);
+    color: var(--gray-700);
+  }
+  
+  .feed_postButton__pNmBs {
+    background-color: var(--gray-700);
+    color: white;
+    border-color: var(--gray-700);
+  }
+  
+  .feed_postButton__pNmBs:hover:not(:disabled) {
+    background-color: var(--gray-800);
+    border-color: var(--gray-800);
+  }
+  
+  .feed_postButton__pNmBs:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .feed_buttonSpinner__8Q69f {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: feed_spin__ks2A2 1s linear infinite;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .feed_container__sKfH5 {
+      padding: 16px;
+    }
+    
+    .feed_modal__exjkG {
+      padding: 24px;
+      margin: 16px;
+    }
+    
+    .feed_postHeader__5X0uP {
+      gap: 12px;
+    }
+    
+    .feed_avatar__jqefn {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .feed_previewActions__TGXFg {
+      flex-direction: column;
+    }
+    
+    .feed_previewButton__E_YfQ,
+    .feed_editButton__FkOoG,
+    .feed_deployButton__5aly1 {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .feed_configRow__j_QGh {
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .feed_checkboxGrid__wZBWJ {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  /* Post Container */
+  .feed_post__0fvLF {
+    background-color: white;
+    border: 1px solid var(--gray-200);
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-fast);
+  }
+  
+  .feed_post__0fvLF:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .feed_postHeader__5X0uP {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .feed_avatar__jqefn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--gray-300);
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 2px solid var(--gray-200);
+  }
+  
+  .feed_postContent__2AYhE {
+    flex: 1 1;
+  }
+  
+  .feed_topic__M_dx9 {
+    font-weight: 600;
+    color: var(--gray-800);
+    margin: 0 0 8px 0;
+    font-size: 15px;
+  }
+  
+  .feed_content__2jtJg {
+    color: var(--gray-700);
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  
+  .feed_standardTag__k9YyT {
+    font-size: 14px;
+    color: var(--gray-600);
+    background-color: var(--gray-100);
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    display: inline-block;
+    border: 1px solid var(--gray-200);
+  }
+  
+  /* Loading States */
+  .feed_loadingState__NdSwl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    margin-top: 16px;
+  }
+  
+  .feed_spinner__EOwc3 {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--gray-200);
+    border-top: 3px solid var(--gray-600);
+    border-radius: 50%;
+    animation: feed_spin__ks2A2 1s linear infinite;
+    margin-bottom: 12px;
+  }
+  
+  @keyframes feed_spin__ks2A2 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .feed_loadingState__NdSwl p {
+    margin: 4px 0;
+    color: var(--gray-700);
+    font-weight: 500;
+  }
+  
+  .feed_loadingSubtext__Ocl_G {
+    color: var(--gray-500) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+  }
+  
+  /* Assessment Complete State */
+  .feed_assessmentComplete__qXYaK {
+    margin-top: 16px;
+    padding: 20px;
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+  }
+  
+  .feed_successMessage__rEGbQ {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: var(--gray-800);
+    font-weight: 600;
+  }
+  
+  .feed_successIcon__SWpT6 {
+    font-size: 18px;
+  }
+  
+  .feed_previewActions__TGXFg {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .feed_previewButton__E_YfQ,
+  .feed_editButton__FkOoG,
+  .feed_deployButton__5aly1 {
+    padding: 8px 16px;
+    border-radius: var(--button-radius);
+    border: 1px solid;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+  }
+  
+  .feed_previewButton__E_YfQ {
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    border-color: var(--gray-300);
+  }
+  
+  .feed_previewButton__E_YfQ:hover {
+    background-color: var(--gray-200);
+    border-color: var(--gray-400);
+  }
+  
+  .feed_editButton__FkOoG {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    border-color: var(--gray-400);
+  }
+  
+  .feed_editButton__FkOoG:hover {
+    background-color: var(--gray-300);
+    border-color: var(--gray-500);
+  }
+  
+  .feed_deployButton__5aly1 {
+    background-color: var(--gray-700);
+    color: white;
+    border-color: var(--gray-700);
+  }
+  
+  .feed_deployButton__5aly1:hover {
+    background-color: var(--gray-800);
+    border-color: var(--gray-800);
+  }
+  
+  .feed_fileInfo__jl7kJ {
+    margin: 0;
+    font-size: 13px;
+    color: var(--gray-500);
+  }
+  
+  .feed_fileInfo__jl7kJ code {
+    background-color: var(--gray-200);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--gray-700);
+  }
+  
+  /* Modal Styles */
+  .feed_modalOverlay__xT64V {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .feed_modal__exjkG {
+    background-color: white;
+    padding: 32px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    z-index: 1001;
+  }
+  
+  .feed_modalHeader__2IdDw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .feed_modalHeader__2IdDw h3 {
+    margin: 0;
+    color: var(--gray-800);
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .feed_closeButton__z_OSf {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: color var(--transition-fast);
+  }
+  
+  .feed_closeButton__z_OSf:hover {
+    color: var(--gray-700);
+  }
+  
+  /* Toggle Buttons */
+  .feed_toggleButtons__APiNI {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    background-color: var(--gray-100);
+    padding: 4px;
+    border-radius: 8px;
+  }
+  
+  .feed_toggleButton__HwPe5 {
+    flex: 1 1;
+    padding: 12px 16px;
+    border: none;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/class/components/FeedUpdate/FeedUpdate.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Modal Styles */
+.FeedUpdate_modalOverlay__mWGcP {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .FeedUpdate_modal__tyf0V {
+    background-color: white;
+    padding: 32px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    z-index: 1001;
+  }
+  
+  .FeedUpdate_modalHeader__LOVLw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .FeedUpdate_modalHeader__LOVLw h3 {
+    margin: 0;
+    color: var(--gray-800);
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .FeedUpdate_closeButton__t893I {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: color var(--transition-fast);
+  }
+  
+  .FeedUpdate_closeButton__t893I:hover {
+    color: var(--gray-700);
+  }
+  
+  /* Toggle Buttons */
+  .FeedUpdate_toggleButtons__HJqJK {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    background-color: var(--gray-100);
+    padding: 4px;
+    border-radius: 8px;
+  }
+  
+  .FeedUpdate_toggleButton__i1P6L {
+    flex: 1 1;
+    padding: 12px 16px;
+    border: none;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  /* Form Elements */
+  .FeedUpdate_formGroup___Lo7W {
+    margin-bottom: 20px;
+  }
+  
+  .FeedUpdate_label__Ju8_6 {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .FeedUpdate_textarea__L_sN_,
+  .FeedUpdate_topicInput__YhzJx,
+  .FeedUpdate_input__jLjJb,
+  .FeedUpdate_select__AJsIz {
+    width: 100%;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: inherit;
+    background-color: white;
+    font-size: 15px;
+    color: var(--gray-800);
+    transition: border-color var(--transition-fast);
+    box-sizing: border-box;
+  }
+  
+  .FeedUpdate_textarea__L_sN_:focus,
+  .FeedUpdate_topicInput__YhzJx:focus,
+  .FeedUpdate_input__jLjJb:focus,
+  .FeedUpdate_select__AJsIz:focus {
+    outline: none;
+    border-color: var(--gray-500);
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+  }
+  
+  .FeedUpdate_textarea__L_sN_ {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .FeedUpdate_numberInput__3gW8h {
+    width: auto;
+    min-width: 80px;
+  }
+  
+  /* AI Configuration Panel */
+  .FeedUpdate_diagnosticConfig__tLy96 {
+    margin-bottom: 20px;
+  }
+  
+  .FeedUpdate_aiConfigPanel__UD2_x {
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .FeedUpdate_configTitle__Yo697 {
+    margin: 0 0 16px 0;
+    color: var(--gray-800);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .FeedUpdate_configSection__IXkSi {
+    margin-bottom: 20px;
+  }
+  
+  .FeedUpdate_configLabel__7LxTe {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .FeedUpdate_checkboxGrid__e2hrp {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 12px;
+    gap: 12px;
+  }
+  
+  .FeedUpdate_checkboxLabel__gMFVq {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-600);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .FeedUpdate_checkboxLabel__gMFVq:hover {
+    background-color: var(--gray-200);
+  }
+  
+  .FeedUpdate_checkboxLabel__gMFVq input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gray-600);
+  }
+  
+  .FeedUpdate_configRow__EFeXs {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .FeedUpdate_configItem__2PoEb {
+    flex: 1 1;
+  }
+  
+  .FeedUpdate_postCard__rl3fV {
+    background-color: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    padding: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .FeedUpdate_postCard__rl3fV:hover {
+    background-color: var(--gray-200);
+    border-color: var(--gray-500);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .FeedUpdate_prompt__d9dxQ {
+    color: var(--gray-600);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    color: var(--gray-600);
+    font-size: 14px;
+  }
+  
+  .FeedUpdate_toggleButton__i1P6L:hover {
+    background-color: var(--gray-200);
+    color: var(--gray-700);
+  }
+  
+  .FeedUpdate_toggleButton__i1P6L.FeedUpdate_active__28lmM {
+    background-color: var(--gray-700);
+    color: white;
+  }
+  
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/class/[classId]/tabs/People/People.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+/* People.module.css */
+
+.People_container__LK4Fa {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .People_title__Kt_QG {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+  }
+  
+  .People_content__3WDM_ {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2rem;
+    gap: 2rem;
+    min-height: 60vh;
+  }
+  
+  /* Teacher Section */
+  .People_teacherSection__6fiNi {
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-fast);
+  }
+  
+  .People_teacherSection__6fiNi:hover {
+    border-color: var(--gray-400);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .People_teacherHeader__dP4aQ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .People_teacherLabel__q89rq {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .People_teacherName__C14FF {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+  }
+  
+  .People_teacherAvatar__4RJ06 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--gray-300);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--gray-600);
+  }
+  
+  .People_teacherStatus__Pk4Py {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--gray-200);
+    border-radius: var(--button-radius);
+    font-size: 0.75rem;
+    color: var(--gray-700);
+    text-align: center;
+  }
+  
+  .People_teacherStatus__Pk4Py.People_online__uHRyu {
+    background-color: #e8f5e8;
+    color: #2d5a2d;
+  }
+  
+  .People_teacherStatus__Pk4Py.People_offline__Pkqmh {
+    background-color: var(--gray-300);
+    color: var(--gray-700);
+  }
+  
+  /* Students Section */
+  .People_studentsSection__kx6qt {
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .People_studentsHeader__JgCof {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-300);
+  }
+  
+  .People_studentsTitle__McaFz {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+  }
+  
+  .People_studentsCount__1lFsm {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    background-color: var(--gray-200);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--button-radius);
+  }
+  
+  .People_studentsList__RdCg8 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .People_studentItem__uqubb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    background-color: var(--gray-200);
+    border-radius: var(--button-radius);
+    transition: var(--transition-fast);
+    cursor: pointer;
+  }
+  
+  .People_studentItem__uqubb:hover {
+    background-color: var(--gray-300);
+    transform: translateY(-1px);
+  }
+  
+  .People_studentItem__uqubb.People_selected__xEK9L {
+    background-color: var(--gray-400);
+    color: var(--gray-100);
+  }
+  
+  .People_studentInfo__l6WQ4 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .People_studentAvatar__wwDTN {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--gray-100);
+    font-weight: 500;
+  }
+  
+  .People_studentName__8vOiC {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+  }
+  
+  .People_studentItem__uqubb.People_selected__xEK9L .People_studentName__8vOiC {
+    color: var(--gray-100);
+  }
+  
+  .People_studentActions__jwXiF {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .People_messageIcon__iUG3O {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+    cursor: pointer;
+  }
+  
+  .People_messageIcon__iUG3O:hover {
+    opacity: 1;
+  }
+  
+  .People_studentStatus___YxBv {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--gray-500);
+  }
+  
+  .People_studentStatus___YxBv.People_online__uHRyu {
+    background-color: #4caf50;
+  }
+  
+  .People_studentStatus___YxBv.People_away__tZwPl {
+    background-color: #ff9800;
+  }
+  
+  .People_studentStatus___YxBv.People_offline__Pkqmh {
+    background-color: var(--gray-500);
+  }
+  
+  /* Empty state */
+  .People_emptyState__NgA45 {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray-600);
+  }
+  
+  .People_emptyState__NgA45 p {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .People_emptyState__NgA45 button {
+    background-color: var(--gray-300);
+    color: var(--gray-700);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .People_emptyState__NgA45 button:hover {
+    background-color: var(--gray-400);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .People_content__3WDM_ {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+    
+    .People_container__LK4Fa {
+      padding: var(--spacing-lg);
+    }
+    
+    .People_title__Kt_QG {
+      font-size: 1.5rem;
+    }
+  }
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/class/[classId]/tabs/Assignments/Assignment.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+.Assignment_container__QHatB {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--gray-100);
+    min-height: 100vh;
+  }
+  
+  .Assignment_header__JhL36 {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--gray-300);
+    padding-bottom: 1rem;
+  }
+  
+  .Assignment_title__hCwsg {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .Assignment_subtitle__BtSEn {
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin: 0;
+  }
+  
+  .Assignment_controls__cY34Q {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .Assignment_searchWrapper__xG_ZE {
+    position: relative;
+    flex: 1 1;
+    min-width: 200px;
+  }
+  
+  .Assignment_searchInput__DWlHj {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+    transition: var(--transition-fast);
+    box-sizing: border-box;
+  }
+  
+  .Assignment_searchInput__DWlHj:focus {
+    outline: none;
+    border-color: var(--gray-500);
+  }
+  
+  .Assignment_searchIcon__sg2Vc {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .Assignment_select__A456S {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .Assignment_select__A456S:focus {
+    outline: none;
+    border-color: var(--gray-500);
+  }
+  
+  .Assignment_addButton__vZyn6 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--gray-800);
+    color: var(--gray-100);
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .Assignment_addButton__vZyn6:hover {
+    background-color: var(--gray-700);
+  }
+  
+  .Assignment_grid__M9Mnf {
+    display: grid;
+    grid-gap: 1rem;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+  
+  .Assignment_card__P_4nj {
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    padding: 1.5rem;
+    transition: var(--transition-fast);
+    cursor: pointer;
+  }
+  
+  .Assignment_card__P_4nj:hover {
+    border-color: var(--gray-400);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Assignment_cardOverdue__FcI4a {
+    border-color: var(--gray-600);
+  }
+  
+  .Assignment_cardHeader__9zc1b {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .Assignment_cardTitle__g99OT {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .Assignment_cardType__3J1Zy {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .Assignment_cardActions__oRCrk {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .Assignment_actionButton__iq31j {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--button-radius);
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+  
+  .Assignment_actionButton__iq31j:hover {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+  }
+  
+  .Assignment_description__9foTJ {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .Assignment_metaGrid__umnfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .Assignment_metaItem__esO2x {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .Assignment_metaIcon__IHVMW {
+    width: 1rem;
+    height: 1rem;
+    color: var(--gray-500);
+  }
+  
+  .Assignment_metaText__sRbB8 {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+  }
+  
+  .Assignment_overdueText___y5ki {
+    color: var(--gray-800);
+    font-weight: 600;
+  }
+  
+  .Assignment_statsRow___uiyt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-300);
+  }
+  
+  .Assignment_submissionStats__o8l_A {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .Assignment_submissionCount__u_tQD {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+  }
+  
+  .Assignment_submissionRate__wLstZ {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--button-radius);
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+  }
+  
+  .Assignment_submissionRateHigh__fBElr {
+    background-color: var(--gray-300);
+    color: var(--gray-900);
+  }
+  
+  .Assignment_submissionRateMedium__IWQ_L {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+  }
+  
+  .Assignment_submissionRateLow__FIX8q {
+    background-color: var(--gray-200);
+    color: var(--gray-700);
+  }
+  
+  .Assignment_statusBadge__ZMBA_ {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--button-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+    display: inline-block;
+    border: 1px solid;
+  }
+  
+  .Assignment_statusActive__COe9i {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    border-color: var(--gray-300);
+  }
+  
+  .Assignment_statusUpcoming__GaRnx {
+    background-color: var(--gray-100);
+    color: var(--gray-600);
+    border-color: var(--gray-400);
+  }
+  
+  .Assignment_statusCompleted__A37fj {
+    background-color: var(--gray-300);
+    color: var(--gray-900);
+    border-color: var(--gray-400);
+  }
+  
+  .Assignment_emptyState__zwcwx {
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray-500);
+  }
+  
+  .Assignment_emptyIcon__PGqy_ {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    color: var(--gray-400);
+  }
+  
+  .Assignment_emptyText__a4hHK {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .Assignment_container__QHatB {
+      padding: 1rem;
+    }
+    
+    .Assignment_controls__cY34Q {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .Assignment_searchWrapper__xG_ZE {
+      min-width: auto;
+    }
+    
+    .Assignment_grid__M9Mnf {
+      grid-template-columns: 1fr;
+    }
+    
+    .Assignment_metaGrid__umnfo {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    
+    .Assignment_statsRow___uiyt {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Assignment_title__hCwsg {
+      font-size: 1.5rem;
+    }
+    
+    .Assignment_card__P_4nj {
+      padding: 1rem;
+    }
+    
+    .Assignment_cardHeader__9zc1b {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .Assignment_cardActions__oRCrk {
+      align-self: flex-end;
+    }
+  }
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/class/[classId]/tabs/GradeBook/Gradebook.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Gradebook.module.css */
+.Gradebook_header__sVMxz {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .Gradebook_title__9z5bL {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .Gradebook_subtitle___xmj5 {
+    color: var(--gray-600);
+  }
+  
+  .Gradebook_controls__hykSw {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .Gradebook_searchInputWrapper__QWNiT {
+    position: relative;
+    flex: 1 1;
+    min-width: 16rem;
+  }
+  
+  .Gradebook_searchInput__U7v91 {
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    width: 100%;
+  }
+  
+  .Gradebook_iconLeft__j392z {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    color: var(--gray-500);
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .Gradebook_tableWrapper___D_5D {
+    background-color: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--button-radius);
+    overflow-x: auto;
+  }
+  
+  .Gradebook_avatar__K_jRK {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 9999px;
+    background-color: var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+  
+  .Gradebook_gradeBadge__1KgLS {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .Gradebook_tableScroll__xZqTm {
+    overflow-x: auto;
+  }
+  
+  .Gradebook_table__GQdp6 {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .Gradebook_tableHead__Xa4XY {
+    background-color: var(--gray-200);
+  }
+  
+  .Gradebook_studentHeader__n_ZWp {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    background-color: var(--gray-200);
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .Gradebook_assignmentHeader__LIO99 {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .Gradebook_assignmentHeaderContent__SEYTL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Gradebook_assignmentName__kZQTf {
+    font-weight: 600;
+  }
+  
+  .Gradebook_assignmentMeta__2Zr6z {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+  
+  .Gradebook_totalHeader__oSHpk,
+  .Gradebook_gradeHeader__J0lux {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .Gradebook_tableBody__hVrXz {
+    background-color: white;
+  }
+  
+  .Gradebook_row__4sXpx:hover {
+    background-color: var(--gray-200);
+  }
+  
+  .Gradebook_studentCell__lc9Kk {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    white-space: nowrap;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .Gradebook_studentInfo__7OSoX {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .Gradebook_studentText__dsuqh {
+    margin-left: 1rem;
+  }
+  
+  .Gradebook_studentName__7_MYB {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-900);
+  }
+  
+  .Gradebook_studentEmail__yZY_s {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+  }
+  
+  .Gradebook_scoreCell__1_HdB {
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid var(--gray-300);
+  }
+  
+  .Gradebook_scoreBadge__dQUxl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .Gradebook_scoreBadge__dQUxl:hover {
+    opacity: 0.8;
+  }
+  
+  .Gradebook_editInputWrapper__64a1T {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .Gradebook_editInput__zprUm {
+    width: 4rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+  }
+  
+  .Gradebook_iconSuccess__VwzK4 {
+    color: var(--green-600);
+  }
+  
+  .Gradebook_iconCancel__C_rLG {
+    color: var(--red-600);
+  }
+  
+  .Gradebook_iconSmall__FfD1j {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .Gradebook_iconTiny__706h9 {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: 0.25rem;
+    opacity: 0.5;
+  }
+  
+  .Gradebook_totalCell__F3BGQ {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .Gradebook_totalPercent__T_BW7 {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+  
+  .Gradebook_finalGradeCell__BTzsS {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Grade colors */
+  .Gradebook_gradeA__s0ShC {
+    color: #15803d;
+    background-color: #dcfce7;
+  }
+  
+  .Gradebook_gradeB__0LJRc {
+    color: #1d4ed8;
+    background-color: #dbeafe;
+  }
+  
+  .Gradebook_gradeC__lpSSd {
+    color: #ca8a04;
+    background-color: #fef9c3;
+  }
+  
+  .Gradebook_gradeD__TWRpl {
+    color: #ea580c;
+    background-color: #ffedd5;
+  }
+  
+  .Gradebook_gradeF__xsWTJ {
+    color: #dc2626;
+    background-color: #fee2e2;
+  }
+  
+  .Gradebook_studentDetailView__T0xPB {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    background-color: var(--gray-100);
+  }
+  
+  .Gradebook_backButton__iZlDU {
+    background: none;
+    border: none;
+    color: var(--gray-700);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+  }
+  
+  .Gradebook_studentDetailHeader__4NVc3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .Gradebook_assignmentList__1d2lk {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .Gradebook_assignmentItem__eGkcl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+  }
+  
+  .Gradebook_assignmentScore__bNg6m {
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--button-radius);
+  }
+  
+  .Gradebook_backButton__iZlDU {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .Gradebook_backButton__iZlDU:hover {
+    background-color: var(--gray-300);
+  }
+
+  .Gradebook_actionButton__4ZBr1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+  }
+  
+  .Gradebook_addButton__xflaX {
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+  }
+  
+  .Gradebook_addButton__xflaX:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: translateY(-1px);
+  }
+  
+  .Gradebook_exportButton___zxrB {
+    background-color: #16a34a; /* green-600 */
+    color: white;
+  }
+  
+  .Gradebook_exportButton___zxrB:hover {
+    background-color: #15803d; /* green-700 */
+    transform: translateY(-1px);
+  }
+  
+  .Gradebook_iconButton__jTz6s {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .Gradebook_actionButton__4ZBr1:active {
+    transform: scale(0.98);
+  }
+
+  .Gradebook_sortDropdown__Ecsbl {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: white;
+    color: var(--gray-900);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--button-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 20 20' fill='none' stroke='%23666' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+  
+  .Gradebook_sortDropdown__Ecsbl:hover {
+    border-color: var(--gray-500);
+  }
+  
+  .Gradebook_sortDropdown__Ecsbl:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3); /* blue-600 ring */
+  }
+  
+  @media (max-width: 768px) {
+    .Gradebook_tableScroll__xZqTm {
+      overflow-x: hidden; /* prevent any scroll */
+    }
+  
+    .Gradebook_tableWrapper___D_5D {
+      overflow-x: hidden;
+    }
+  
+    .Gradebook_table__GQdp6 {
+      width: 100% !important;  /* force full width */
+      table-layout: fixed;
+    }
+  
+    .Gradebook_tableHead__Xa4XY,
+    .Gradebook_tableBody__hVrXz {
+      width: 100%;
+    }
+  
+    .Gradebook_studentHeader__n_ZWp,
+    .Gradebook_assignmentHeader__LIO99,
+    .Gradebook_totalHeader__oSHpk,
+    .Gradebook_gradeHeader__J0lux,
+    .Gradebook_scoreCell__1_HdB,
+    .Gradebook_totalCell__F3BGQ,
+    .Gradebook_finalGradeCell__BTzsS {
+      display: none;
+    }
+  
+    .Gradebook_studentCell__lc9Kk {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+  
+    .Gradebook_gradebookWrapper__7bLUF {
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+  
+
+  .Gradebook_modalOverlay__O8YtW {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .Gradebook_modalContent__EwTCB {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--button-radius);
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Gradebook_modalHeader__cgJeH {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .Gradebook_modalActions__XALvf {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  

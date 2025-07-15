@@ -3,33 +3,37 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from 'next/navigation';
 import styles from "./ClassPage.module.css";
 import { ClassItem, Post, Assignment, Student, Grade } from "../../types/ClassTypes";
+import Feed from "./tabs/feed/feed";
+import People from "./tabs/People/People"
+import Assignments from "./tabs/Assignments/Assignment";
+import Gradebook from "./tabs/GradeBook/Gradebook"
+import { ModalProvider } from "../../context/updatefeed";
+
+
 
 const STORAGE_KEY = 'classroom_classes';
 
 export default function ClassPage() {
+  const [activeTab, setActiveTab] = useState("feed");
+  console.log(activeTab)
   const params = useParams();
   const classId = params.id as string;
   const router = useRouter();
-  
-    
   const storedClasses = localStorage.getItem(STORAGE_KEY);
 
-
+  // access the current classes data
   let currentClass;
   if(storedClasses) {
     currentClass = JSON.parse(storedClasses);
-   console.log(currentClass)
+    console.log(currentClass)
   }
-
-  const { name } = currentClass[0]
-  console.log(name)
-  
+  const { name, classCode } = currentClass[0]
   
   // State for all class data
   const [classData, setClassData] = useState<ClassItem | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // Individual state for different data types (optional, for better UX)
+  // Individual state for different data types 
   const [posts, setPosts] = useState<Post[]>([]);
   const [assignments, setAssignments] = useState<Assignment[]>([]);
   const [students, setStudents] = useState<Student[]>([]);
@@ -238,7 +242,42 @@ export default function ClassPage() {
     return total / assignmentGrades.length;
   };
 
+  const tabs = [
+    { id: "feed", label: "Feed", icon: "📰" },
+    { id: "assignments", label: "Assignments", icon: "📝" },
+    { id: "people", label: "People", icon: "👥" },
+    { id: "gradebook", label: "Gradebook", icon: "📊" }
+  ];
 
+  const renderTabContent = (tabId) => {
+    switch(tabId){
+      case "feed":        
+        return (
+          <ModalProvider>
+            <Feed />;
+          </ModalProvider>
+        );
+        break;
+        case "people":
+          return <People />;
+          break;
+        case "assignments":
+          return <Assignments />
+          break;
+          case "gradebook":
+            return (
+              <ModalProvider>
+                <Gradebook />
+              </ModalProvider>
+            );
+          break;
+      default:
+      return "hello world"
+
+    }
+
+  };
+ 
 
 
   return (
@@ -258,10 +297,7 @@ export default function ClassPage() {
               {name}
             </h1>
             <div className={styles.classMeta}>
-              <span>Code:</span>
-              <span> Students</span>
-              <span>{assignments.length} Assignments</span>
-              <span>{posts.length} Posts</span>
+              <span>Code: {classCode}</span>
             </div>
           </div>
         </div>
@@ -271,43 +307,34 @@ export default function ClassPage() {
         <div className={styles.content}>
           {/* Class Statistics */}
           <div className={styles.classStats}>
-            <div className={styles.statCard}>
-              <h3>Students</h3>
-              <p>{students.length}</p>
-            </div>
-            <div className={styles.statCard}>
-              <h3>Assignments</h3>
-              <p>{assignments.length}</p>
-            </div>
-            <div className={styles.statCard}>
-              <h3>Posts</h3>
-              <p>{posts.length}</p>
-            </div>
-            <div className={styles.statCard}>
-              <h3>Grades</h3>
-              <p>{grades.length}</p>
-            </div>
+          
           </div>
-
-          {/* Debug Info - You can remove this in production */}
-          <div className={styles.debugInfo}>
-            <h3>Available Data:</h3>
-            <ul>
-              <li>Class Name:</li>
-              <li>Class Code: </li>
-              <li>Posts: {posts.length}</li>
-              <li>Assignments: {assignments.length}</li>
-              <li>Students: {students.length}</li>
-              <li>Grades: {grades.length}</li>
-            </ul>
-          </div>
-
           {/* You can now use all this data in your tabs */}
-          <div className={styles.tabContent}>
-            {/* Your existing tab content, but now with access to all data */}
+          <div>
+        <p className={styles.contentDescription}>
+            {renderTabContent(activeTab)}
+          </p>
+        </div>
+        </div>         
+      </main>
+      {/* Bottom Navigation */}
+      <nav className={styles.bottomNav}>
+        <div className={styles.bottomNavContent}>
+          <div className={styles.tabContainer}>
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`${styles.tab} ${
+                  activeTab === tab.id ? styles.tabActive : ""
+                }`}
+              >
+                <span className={styles.tabLabel}>{tab.label}</span>
+              </button>
+            ))}
           </div>
         </div>
-      </main>
+      </nav>
     </div>
   );
 }

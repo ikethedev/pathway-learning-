@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2020",
     "baseUrl": "src/",
     "paths": {
       "@/styles/*": ["app/styles/*"],
       "@/components/*": ["app/components/*"], 
-      "@/types/*": ["app/types/*"]
+      "@/types/*": ["app/types/*"],
+      "@/global/*": ["app/global/*"],
+      "~/*": ["src/*"],
     },
     "lib": [
       "dom",
