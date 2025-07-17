@@ -1,0 +1,404 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/header/DashboardHeader.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+
+.DashboardHeader_dashboardHeader__8NBaQ {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background-color: var(--gray-200);
+}
+
+/* Hamburger Menu */
+.DashboardHeader_hamburgerMenu__6bUOa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: var(--hamburger-width);
+    height: var(--hamburger-height);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+
+.DashboardHeader_hamburgerLine__X8VNz {
+    display: block;
+    width: 100%;
+    height: var(--line-height);
+    background-color: var(--gray-800);
+    border-radius: var(--spacing-xs);
+    transition: var(--transition-fast);
+}
+
+/* Dashboard Home Title */
+.DashboardHeader_dashboardTitle__4_Rka {
+    font-size: 1.8em;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* Add Class Button */
+.DashboardHeader_addButton__xjmlL {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--gray-800);
+    color: var(--gray-100);
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: var(--transition-fast);
+}
+
+.DashboardHeader_addButton__xjmlL:hover {
+    background-color: var(--gray-900);
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/ClassActionModule/ClassActionModule.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Overlay that covers the entire screen */
+.ClassActionModule_overlay__Jlgf7 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.ClassActionModule_form__P_q_G{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 0.75rem;
+    z-index: 10000;
+    width: 100%;
+    max-width: 400px;
+    min-width: 320px;
+}
+
+.ClassActionModule_form__input-container__DxoYo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 10000;
+}
+
+.ClassActionModule_action__btn__dIWJQ{
+    background-color: transparent;
+    border: none;
+}
+
+.ClassActionModule_add-button__SbBt5 {
+    border: 1px solid #eaeaea;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.ClassActionModule_add-button__SbBt5:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/shared/FormStyles.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.FormStyles_container__XhwHb{ 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+    border-radius: .75rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.FormStyles_step__9kGvX{
+    font-size: .75rem;
+    opacity: 50%;
+}
+
+.FormStyles_step-header__J_EeD{
+    font-size: .75rem;
+}
+
+
+.FormStyles_form-input__1E_qV{
+    border: solid #eaeaea 1px;
+    border-radius: 0.5rem;
+    padding: .5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    outline: none;
+
+}
+
+
+.FormStyles_button-container__VsDZA{
+    display: flex;
+    justify-content: space-between;
+}
+
+.FormStyles_error-message__itE0H{
+    color: red;
+    font-size: 0.75rem;
+    padding-left: 1rem;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/EmptyDashboard/EmptyDashboard.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/* EmptyDashboard.module.css */
+
+.EmptyDashboard_container__oMrVB {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+  }
+  
+  .EmptyDashboard_content__MTgiz {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .EmptyDashboard_imageContainer__rCNO5 {
+    margin-bottom: var(--spacing-xxl);
+  }
+  
+  .EmptyDashboard_imagePlaceholder__BEii0 {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gray-300);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .EmptyDashboard_placeholderIcon__hVaiz {
+    font-size: 64px;
+    opacity: 0.7;
+  }
+  
+  .EmptyDashboard_textContent__NuRws {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl); /* Add consistent spacing between title, subtitle, and button */
+    align-items: center;
+  }
+  
+  .EmptyDashboard_title__7blgZ {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0 0 var(--spacing-md) 0;
+    line-height: 1.2;
+  }
+  
+  .EmptyDashboard_subtitle__RCfeT {
+    font-size: 18px;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin: 0 0 var(--spacing-xxl) 0;
+  }
+  
+  .EmptyDashboard_addButton__ykz60 {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-xxl);
+    background-color: var(--gray-900);
+    color: white;
+    border: none;
+    border-radius: var(--spacing-md);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .EmptyDashboard_addButton__ykz60:hover {
+    background-color: var(--gray-800);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .EmptyDashboard_addButton__ykz60:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .EmptyDashboard_buttonIcon__Xa3AS {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .EmptyDashboard_imagePlaceholder__BEii0 {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .EmptyDashboard_placeholderIcon__hVaiz {
+      font-size: 48px;
+    }
+    
+    .EmptyDashboard_title__7blgZ {
+      font-size: 28px;
+    }
+    
+    .EmptyDashboard_subtitle__RCfeT {
+      font-size: 16px;
+    }
+  }
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/global/sharedUi.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+.sharedUi_column__Fcj6A{
+    display: flex;
+    flex-direction: column;
+}
+
+.sharedUi_nav-buttons__5xyea {
+    border: 1px solid #eaeaea;
+    padding: 0.25rem 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+.sharedUi_primary-button___HLQj {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--gray-800); /* Monochrome dark gray */
+    color: var(--gray-100); /* Pure white for maximum contrast */
+    border: none; /* No border */
+    border-radius: 1.5rem;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  }
+  
+  .sharedUi_primary-button___HLQj:hover {
+    background-color: var(--gray-700);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .sharedUi_primary-button___HLQj:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/ClassCard/ClassCard.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.ClassCard_card__FNnMm {
+    border: 1px solid var(--gray-300);
+    background-color: var(--gray-200);
+    padding: 0; /* Remove padding to allow full background coverage */
+    border-radius: var(--spacing-sm);
+    transition: box-shadow var(--transition-fast);
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden; /* Ensure background doesn't overflow rounded corners */
+    position: relative;
+  }
+  
+  .ClassCard_card__FNnMm:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .ClassCard_cardHeader__DnT_m {
+    background-color: var(--gray-300);
+    padding: var(--spacing-xl);
+    position: relative;
+    color: var(--gray-800);
+  }
+  
+  .ClassCard_iconRow__sBJ6A {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 1; /* Ensure content is above the overlay */
+  }
+  
+  .ClassCard_icon__OKLTm {
+    font-size: 1.5rem;
+  }
+  
+  .ClassCard_className__oC3dn {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin: 0;
+  }
+  
+  .ClassCard_cardBody__jIg58 {
+    padding: var(--spacing-xl);
+    background-color: var(--gray-200);
+  }
+  
+  .ClassCard_infoRow__VsonY {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+  
+  .ClassCard_infoIcon__nMcbc {
+    font-size: 1.25rem;
+  }
+  
+  .ClassCard_studentCount__r5_G4 {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  /* Hover effects */
+  .ClassCard_card__FNnMm:hover .ClassCard_cardHeader__DnT_m {
+    background-color: var(--gray-400);
+    transition: background-color var(--transition-fast);
+  }
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/dashboard/shared/Dashboard.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.Dashboard_container__r0fef {
+    padding:1.25rem 1.25rem;
+}
+
+.Dashboard_courses__grid__ofzNy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
