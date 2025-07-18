@@ -8,6 +8,7 @@ export default function SignUpStep3({
   onBack,
   formData,
   updateFormData,
+  handleFinalSubmit
 }) {
   const [selectedGoals, setSelectedGoals] = useState<string[]>(
     formData?.goals || []
@@ -32,9 +33,7 @@ export default function SignUpStep3({
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (selectedGoals.length > 0) {
-      onNext();
-    }
+    handleFinalSubmit()
   };
 
   return (
@@ -75,7 +74,7 @@ export default function SignUpStep3({
           <button
             type="button"
             className={`${shareUi["nav-buttons"]}`}
-            onClick={onNext}
+            onClick={handleSubmit}
           >
             Next
           </button>

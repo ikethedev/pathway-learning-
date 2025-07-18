@@ -133,9 +133,10 @@ export default function SignUpStep1({ onNext, formData, updateFormData }) {
         if (submitError) setSubmitError("");
     }
 
-    const handleSubmit = (e: React.MouseEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         
+
         // Clear previous submit error
         setSubmitError("");
         
@@ -169,6 +170,8 @@ export default function SignUpStep1({ onNext, formData, updateFormData }) {
             setSubmitError("Please fix the errors above before continuing");
             return;
         }
+
+        console.log(updateFormData({ name, email, password}));
         
         // If everything is valid, proceed to next step
         onNext();
@@ -179,7 +182,6 @@ export default function SignUpStep1({ onNext, formData, updateFormData }) {
             <p className={sharedStyles['step']}>Step 1 of 3</p>
             <h1 className={sharedStyles['step-header']}>Account Setup</h1>
             <form
-        action="submit"
         className={`${shareUi["column"]} ${formCommonStyles["form"]}`}
       >
                 <input 
@@ -218,7 +220,7 @@ export default function SignUpStep1({ onNext, formData, updateFormData }) {
                 </span>
                 
                 {submitError && <div className={formCommonStyles["error-message"]}>{submitError}</div>}
-                    <button onClick={handleSubmit}  className={`${shareUi["nav-buttons"]} ${step1Styles['next-btn']}`} >Next</button>
+                    <button type="button"  onClick={handleSubmit}  className={`${shareUi["nav-buttons"]} ${step1Styles['next-btn']}`} >Next</button>
  
                 <p className={step1Styles['login']}>
                     Already have an account?

@@ -1,0 +1,61 @@
+.transitionContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .pageWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .slideIn {
+    transform: translateX(0);
+  }
+  
+  .slideOutLeft {
+    transform: translateX(-100%);
+  }
+  
+  .slideOutRight {
+    transform: translateX(100%);
+  }
+  
+  /* Alternative: More advanced transition with overlay */
+  .transitionContainer.advanced {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .pageWrapper.advanced {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slideIn.advanced {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  
+  .slideOutLeft.advanced {
+    transform: translateX(-100%) scale(0.95);
+    opacity: 0.8;
+  }
+  
+  .slideOutRight.advanced {
+    transform: translateX(100%) scale(0.95);
+    opacity: 0.8;
+  }
+  

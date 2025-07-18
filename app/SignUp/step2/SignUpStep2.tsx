@@ -99,6 +99,7 @@ export default function StepUp2Setup({
 
   const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    console.log(formData)
     setShowErrors(true);
     
     if (validateForm()) {
