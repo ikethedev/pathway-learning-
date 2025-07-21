@@ -4,12 +4,11 @@ import React, { useState } from "react";
 import styles from "./DashboardHeader.module.css";
 import ClassActionModule from "../ClassActionModule/ClassActionModule";
 
-export default function DashboardHeader({ updateCourseName, classActionModal, toggleClassAction, addClass, currentClassName, addCourseModal}) {
+export default function DashboardHeader({ updateCourseName, classActionModal, toggleClassAction, addClass, currentClassName, addCourseModal, toggleSideMenu}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-        alert("sidebar toggled")
+        toggleSideMenu()
     };
     
    

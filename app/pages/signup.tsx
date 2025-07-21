@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import SignUpStep1 from "../SignUp/step1/SignUpStep1";
-import SignUpStep2 from "../SignUp/step2/SignUpStep2";
-import SignUpStep3 from "../SignUp/step3/SignUpStep3";
-import OnboardingLayout from "../SignUp/shared/Onboarding"
+import SignUpStep1 from "../signup/step1/SignUpStep1";
+import SignUpStep2 from "../signup/step2/SignUpStep2";
+import SignUpStep3 from "../signup/step3/SignUpStep3";
+import OnboardingLayout from "../signup/shared/Onboarding"
 import { createClient } from '@supabase/supabase-js'
-import GoToDashBoard from "../SignUp/dashboard/GoToDashBoard";
+import GoToDashBoard from "../signup/dashboard/GoToDashBoard";
 
 
 // api key 
@@ -118,7 +118,7 @@ export default function SignUp() {
         }
     };
 
-    
+
     return (
         <OnboardingLayout>
             {currentStep === 1 && (
@@ -126,6 +126,7 @@ export default function SignUp() {
                     formData={formData}
                     updateFormData={updateFormData}
                     onNext={goToNextStep}
+                  
                 />
             )}
 

@@ -1,5 +1,6 @@
 .container {
     padding:1.25rem 1.25rem;
+    width: 100%;
 }
 
 .courses__grid {

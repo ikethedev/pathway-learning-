@@ -1,0 +1,16 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+.content {
+    width: 100%;
+}
+  
+  .main {
+    flex: 1;
+    padding: var(--spacing-lg);
+    background-color: var(--gray-100);
+    overflow-y: auto;
+  }
+  

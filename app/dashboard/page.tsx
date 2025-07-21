@@ -5,73 +5,65 @@ import { v4 as uuidv4 } from "uuid";
 import DashboardHeader from "./header/DashboardHeader";
 import EmptyDashboard from "./EmptyDashboard/EmptyDashboard";
 import ClassCard from "./ClassCard/ClassCard";
-import styles from "./shared/Dashboard.module.css"
-import { supabase } from "../pages/signup";
+import styles from "./shared/Dashboard.module.css";
+import { getSupabaseClient } from "../lib/auth/supabaseClient";
+import Sidebar from "../components /sidebar/Sidebar";
 
 type ClassItem = {
-    id: string;
-    name: string;
-    studentCount?: number;
-    createdAt?: Date;
-}
-
-const STORAGE_KEY = 'classroom_classes';
+  id: string;
+  name: string;
+  studentCount?: number;
+  createdAt?: Date;
+};
 
 export default function Dashboard() {
-  const [userProfile, setUserProfile] = useState(null)
+  const [showMenu, setShowMenu] = useState(false);
+  const [userProfile, setUserProfile] = useState(null);
   const [courses, setCourses] = useState<ClassItem[]>([]);
   const [classActionModal, setClassActionModal] = useState(false);
   const [currentClassName, setCurrentClassName] = useState("");
   const router = useRouter();
 
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-      const fetchUserProfile = async () => {
-          try {
-              const { data: { user } } = await supabase.auth.getUser();
-              
-              if (user) {
-                  const { data, error } = await supabase
-                      .from('user_profiles')
-                      .select('*')
-                      .eq('id', user.id)
-                      .single();
+    const supabase = getSupabaseClient();
 
-                  if (error) throw error;
-                  setUserProfile(data);
-                  console.log(userProfile)
-              }
-          } catch (error) {
-              console.error('Error fetching user profile:', error);
-          } finally {
-              setLoading(false);
-          }
-      };
+    const fetchUserProfile = async () => {
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
 
-      fetchUserProfile();
+        if (user) {
+          const { data, error } = await supabase
+            .from("user_profiles")
+            .select("*")
+            .eq("id", user.id)
+            .single();
+
+          if (error) throw error;
+          setUserProfile(data);
+        }
+      } catch (error) {
+        console.error("Error fetching user profile:", error);
+      }
+    };
+
+    fetchUserProfile();
   }, []);
-
-  console.log(userProfile)
-
-
 
   // Save classes to localStorage whenever courses change
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(courses));
+      localStorage.setItem("classroom_classes", JSON.stringify(courses));
     } catch (error) {
-      console.error('Error saving classes to localStorage:', error);
+      console.error("Error saving classes to localStorage:", error);
     }
-  }, [courses]); // Dependency array ensures this runs whenever courses state changes
+  }, [courses]);
 
   const goToClass = (classId: string) => {
-    // Navigate to the class page
-    console.log("Navigating to:", `/class/${classId}`); // Add this to debug
     router.push(`/class/${classId}`);
   };
 
-  // Add course via form submission
   const addCourseModal = (e: React.FormEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -86,72 +78,65 @@ export default function Dashboard() {
 
   const addClass = (className: string) => {
     if (!className.trim()) return;
-    
+
     const newClass: ClassItem = {
       id: uuidv4(),
       name: className.trim(),
       studentCount: 0,
-      createdAt: new Date()
+      createdAt: new Date(),
     };
-    
+
     setCourses((prevState) => [...prevState, newClass]);
-    setCurrentClassName(""); // Reset input
-    setClassActionModal(false); // Close modal
-    console.log("Updated courses:", [...courses, newClass]);
-  };
-
-  // Function to delete a class (called from ClassCard or elsewhere)
-  const deleteClass = (classId: string) => {
-    setCourses((prevState) => prevState.filter(course => course.id !== classId));
-  };
-
-  // Function to update a class (for editing class name)
-  const updateClass = (classId: string, updates: Partial<ClassItem>) => {
-    setCourses((prevState) => 
-      prevState.map(course => 
-        course.id === classId ? { ...course, ...updates } : course
-      )
-    );
+    setCurrentClassName("");
+    setClassActionModal(false);
   };
 
   const toggleClassAction = () => {
     setClassActionModal(!classActionModal);
   };
 
+  const toggleSideMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div>
-      <DashboardHeader
-        classActionModal={classActionModal}
-        addClass={addClass}
-        toggleClassAction={toggleClassAction}
-        updateCourseName={updateCourseName}
-        currentClassName={currentClassName}
-        addCourseModal={addCourseModal}
-      />
-      {courses.length === 0 ? (
-        <EmptyDashboard
-          addClass={addClass}  
-          toggleClassAction={toggleClassAction}
+      <div>
+        <DashboardHeader
           classActionModal={classActionModal}
-          addCourseModal={addCourseModal}
+          addClass={addClass}
+          toggleClassAction={toggleClassAction}
           updateCourseName={updateCourseName}
           currentClassName={currentClassName}
+          addCourseModal={addCourseModal}
+          toggleSideMenu={toggleSideMenu}
         />
-      ) : (
-        <div className={styles.container}>
-          <h2>Welcome to courses!</h2>
-          <div className={styles["courses__grid"]}>
-            {courses.map((course) => (
-              <ClassCard 
-                key={course.id}
-                name={course.name} 
-                studentCount={course.studentCount || 0} 
-                onGoToClass={() => goToClass(course.id)}
-              />
-            ))}
+
+        {courses.length === 0 ? (
+          <EmptyDashboard
+            addClass={addClass}
+            toggleClassAction={toggleClassAction}
+            classActionModal={classActionModal}
+            addCourseModal={addCourseModal}
+            updateCourseName={updateCourseName}
+            currentClassName={currentClassName}
+          />
+        ) : (
+          <div className={styles.container}>
+            <h2>Welcome to courses!</h2>
+            <div className={styles["courses__grid"]}>
+              {courses.map((course) => (
+                <ClassCard
+                  key={course.id}
+                  name={course.name}
+                  studentCount={course.studentCount || 0}
+                  onGoToClass={() => goToClass(course.id)}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
